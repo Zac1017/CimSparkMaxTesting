@@ -4,15 +4,23 @@
 
 package frc.robot;
 
+
 import edu.wpi.first.wpilibj2.command.Command;
 import edu.wpi.first.wpilibj2.command.Commands;
+import edu.wpi.first.wpilibj2.command.button.CommandXboxController;
+import frc.robot.commands.RunMotor;
+import frc.robot.subsystems.Motor;
 
 public class RobotContainer {
+  private final Motor motor = new Motor();
+  private final CommandXboxController operatorController = new CommandXboxController(2);
   public RobotContainer() {
     configureBindings();
   }
 
-  private void configureBindings() {}
+  private void configureBindings() {
+    motor.setDefaultCommand(new RunMotor(motor, () -> operatorController.getLeftX()));
+  }
 
 
 }
