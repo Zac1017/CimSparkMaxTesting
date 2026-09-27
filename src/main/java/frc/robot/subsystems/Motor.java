@@ -15,7 +15,7 @@ import frc.robot.Constants;
 
 public class Motor extends SubsystemBase{
     
-    private final SparkMax motor = new SparkMax(0, MotorType.kBrushed);
+    private final SparkMax motor = new SparkMax(1, MotorType.kBrushless);
 
     public Motor() {
         SparkMaxConfig motorConfig = new SparkMaxConfig();
